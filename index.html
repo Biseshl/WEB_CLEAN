@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrightMop Collective | Professional Cleaning Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <a class="brand" href="#">
+          <span class="brand__logo">BM</span>
+          <span class="brand__text">BrightMop Collective</span>
+        </a>
+        <nav>
+          <a href="#services">Cleaning Services</a>
+          <a href="#quote">Free Quote</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__grid">
+          <div>
+            <p class="eyebrow">Melbourne cleaning specialists</p>
+            <h1>Book trusted cleaning professionals for homes and offices</h1>
+            <p>
+              We focus only on cleaning. No handyman, no gardening, no plumbing — just high-quality,
+              reliable cleaning delivered 7 days a week.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#quote">Get free AI quote</a>
+              <a class="btn btn--ghost" href="#services">Explore cleaning services</a>
+            </div>
+          </div>
+          <aside class="hero__card">
+            <h3>Why choose us</h3>
+            <ul>
+              <li>Insured & vetted cleaners</li>
+              <li>Eco-friendly products available</li>
+              <li>Flexible weekly, fortnightly, and one-off options</li>
+              <li>Transparent hourly pricing guidance</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <h2>Cleaning services we provide</h2>
+          <p class="section__lead">All services below are cleaning-only, based on the cleaning section scope you requested.</p>
+          <div class="services-grid">
+            <article>End of Lease Cleaning</article>
+            <article>Deep Cleaning</article>
+            <article>Regular Home Cleaning</article>
+            <article>Carpet Cleaning</article>
+            <article>Upholstery Cleaning</article>
+            <article>Mattress Cleaning</article>
+            <article>Oven Cleaning</article>
+            <article>Barbecue Cleaning</article>
+            <article>Builders Cleaning</article>
+            <article>Window Cleaning</article>
+            <article>Pressure Washing</article>
+            <article>Gutter Cleaning</article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="quote">
+        <div class="container quote-layout">
+          <div>
+            <h2>Free Quote with AI assistant</h2>
+            <p>
+              Tell us your property details and required cleaning services. The assistant generates an
+              instant estimate range, time expectation, and recommended cleaning plan.
+            </p>
+            <p class="small-note">
+              Current integration is browser-based AI logic for instant estimates. It can be swapped to OpenAI/other LLM API once your preferred provider is confirmed.
+            </p>
+          </div>
+
+          <form id="quote-form" class="quote-form">
+            <label>
+              Full name
+              <input type="text" name="name" required placeholder="Alex Smith" />
+            </label>
+            <label>
+              Postcode
+              <input type="text" name="postcode" required pattern="[0-9]{4}" placeholder="3000" />
+            </label>
+            <label>
+              Bedrooms
+              <input type="number" name="bedrooms" min="0" value="2" required />
+            </label>
+            <label>
+              Bathrooms
+              <input type="number" name="bathrooms" min="1" value="1" required />
+            </label>
+            <label>
+              Service priority
+              <select name="priority" required>
+                <option value="regular">Regular upkeep</option>
+                <option value="deep">Deep refresh</option>
+                <option value="urgent">Urgent / end of lease</option>
+              </select>
+            </label>
+            <fieldset>
+              <legend>Select cleaning services</legend>
+              <div class="checks">
+                <label><input type="checkbox" name="services" value="End of Lease Cleaning" /> End of Lease Cleaning</label>
+                <label><input type="checkbox" name="services" value="Deep Cleaning" /> Deep Cleaning</label>
+                <label><input type="checkbox" name="services" value="Regular Home Cleaning" /> Regular Home Cleaning</label>
+                <label><input type="checkbox" name="services" value="Carpet Cleaning" /> Carpet Cleaning</label>
+                <label><input type="checkbox" name="services" value="Upholstery Cleaning" /> Upholstery Cleaning</label>
+                <label><input type="checkbox" name="services" value="Mattress Cleaning" /> Mattress Cleaning</label>
+                <label><input type="checkbox" name="services" value="Oven Cleaning" /> Oven Cleaning</label>
+                <label><input type="checkbox" name="services" value="Barbecue Cleaning" /> Barbecue Cleaning</label>
+                <label><input type="checkbox" name="services" value="Builders Cleaning" /> Builders Cleaning</label>
+                <label><input type="checkbox" name="services" value="Window Cleaning" /> Window Cleaning</label>
+                <label><input type="checkbox" name="services" value="Pressure Washing" /> Pressure Washing</label>
+                <label><input type="checkbox" name="services" value="Gutter Cleaning" /> Gutter Cleaning</label>
+              </div>
+            </fieldset>
+            <button class="btn btn--primary" type="submit">Generate AI Quote</button>
+          </form>
+
+          <article id="quote-output" class="quote-output" aria-live="polite">
+            <h3>Your AI estimate appears here</h3>
+            <p>Fill the form and click <strong>Generate AI Quote</strong>.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <h2>Frequently asked questions</h2>
+          <details>
+            <summary>Do you provide services outside cleaning?</summary>
+            <p>No. We currently focus only on cleaning services.</p>
+          </details>
+          <details>
+            <summary>Can AI quotes be connected to my CRM?</summary>
+            <p>Yes. We can connect this quote form to CRMs/webhooks (HubSpot, Zoho, Make, Zapier, etc.).</p>
+          </details>
+          <details>
+            <summary>Can you replace the temporary name and logo later?</summary>
+            <p>Absolutely. The current brand is a placeholder and can be updated once you finalize branding.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> BrightMop Collective · Cleaning services only.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
